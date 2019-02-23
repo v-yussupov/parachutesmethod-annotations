@@ -8,10 +8,19 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
 public @interface ParachuteMethod {
+    /**
+     * Retain annotations in extracted functionality.
+     * False by default.
+     */
+    boolean retainParachuteAnnotations() default false;
 
-    public enum Provider {
-        AWS_LAMBDA, MS_AF, GF
-    }
+    /**
+     * Specification of overprovisioning factor for router configuration.
+     */
+    double overProvisioningFactor();
 
-    Provider targetProvider() default Provider.AWS_LAMBDA;
+    /**
+     * Example condition for rerouting on specific day.
+     */
+    String rerouteOnDay();
 }
