@@ -9,7 +9,13 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface ParachuteMethod {
     /**
-     * Retain annotations in extracted functionality.
+     * Retain other annotations in extracted functionality.
+     * False by default.
+     */
+    boolean retainAnnotations() default false;
+
+    /**
+     * Retain parachute annotations in extracted functionality.
      * False by default.
      */
     boolean retainParachuteAnnotations() default false;
