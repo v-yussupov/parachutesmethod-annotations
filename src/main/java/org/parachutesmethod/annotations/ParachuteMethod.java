@@ -21,6 +21,11 @@ public @interface ParachuteMethod {
     boolean retainParachuteAnnotations() default false;
 
     /**
+     * Configure the method to be a backup route.
+     */
+    boolean backupRoute();
+
+    /**
      * Specification of overprovisioning factor for router configuration.
      */
     double overProvisioningFactor();
